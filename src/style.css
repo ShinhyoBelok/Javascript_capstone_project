@@ -10,6 +10,18 @@
   font-size: 1.1rem;
 }
 
+.pokemon-container {
+  padding: 24px;
+  background-color: lightblue;
+  height: calc(100vh - 103px - 115px);
+  margin-top: 103px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -18,12 +30,18 @@ a {
 .dflex {
   display: flex;
   align-items: center;
-  gap: 60px;
 }
 
 header {
   padding: 24px;
-  background-color: lightblue;
+  background-color: #4d93e7;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+
+nav {
+  gap: 60px;
 }
 
 .logo {
@@ -37,4 +55,42 @@ footer {
   background-color: #ffcb05;
   width: 100vw;
   text-align: center;
+}
+
+.pokemonCard {
+  width: 200px;
+  height: 230px;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+}
+
+.pokemonCard .pokemonPic {
+  background-color: #a39bff;
+  border-radius: 50%;
+  width: 115px;
+}
+
+.pokemonDetail {
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.likes {
+  flex-direction: column;
+}
+
+.likes span {
+  font-size: 0.8rem;
+}
+
+.likes img {
+  width: 25px;
+}
+
+.comments {
+  padding: 3px;
+  box-shadow: 5px 5px;
 }
