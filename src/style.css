@@ -1,12 +1,12 @@
 @font-face {
-  font-family: gameboyFont;
+  font-family: gameboyFont, sans-serif;
   src: url(./font/Gbboot-ALpM.ttf);
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: gameboyFont;
+  font-family: gameboyFont, sans-serif;
   font-size: 1.1rem;
 }
 
