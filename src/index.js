@@ -1,4 +1,6 @@
 import './style.css';
 import logo from './img/logo.png';
+import getAllPokemons from './Jsmodules/getPokemon.js';
 
-imageLogo = document.querySelector('.logo').src=logo;
+document.querySelector('.logo').src = logo;
+getAllPokemons();
