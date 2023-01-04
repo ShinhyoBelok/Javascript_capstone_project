@@ -1,4 +1,9 @@
 docs
 coverage
+<<<<<<< HEAD
 dist
 webpack.config.js
+=======
+webpack.config.js
+dist
+>>>>>>> im-popup-comment
