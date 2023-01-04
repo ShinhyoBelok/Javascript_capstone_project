@@ -56,7 +56,6 @@
 
 .x-btn {
   font-size: 1.5rem;
-  /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   cursor: pointer;
 }
 
@@ -65,11 +64,9 @@
   border-bottom: 1px solid orangered;
 }
 
-
 .display {
   display: block;
 }
-
 
 .d-grid-2col {
   display: grid;
@@ -83,7 +80,6 @@
 
 .popup-detail-item {
   font-size: medium;
-  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 @media screen and (min-width: 400px) {
