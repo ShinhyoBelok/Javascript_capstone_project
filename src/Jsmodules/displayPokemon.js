@@ -1,7 +1,7 @@
 const pokemonContainer = document.querySelector('.pokemon-container');
 const showPokemon = (pokemonList) => {
   pokemonContainer.innerHTML = '';
-  for (let i = 0; i < pokemonList.length; i++) {
+  for (let i = 0; i < pokemonList.length; i += 1) {
     const pokemonCardTemplate = `
       <article class="pokemonCard dflex">
         <img class="pokemonPic" src="${pokemonList[i].image}" alt="Pokemon pic">
@@ -17,6 +17,6 @@ const showPokemon = (pokemonList) => {
     `;
     pokemonContainer.innerHTML += pokemonCardTemplate;
   }
-}
+};
 
 export default showPokemon;
