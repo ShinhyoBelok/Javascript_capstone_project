@@ -13,7 +13,7 @@ const buttonPressed = (e) => {
     .then((response) => response.json())
     .then((json) => {
       const pokemon = json;
-      const { name } = pokemon.name;
+      const name = pokemon.name;
       // const image = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`;
       // const image = pokemon.sprites.front_default;
       const image = pokemon.sprites.other.dream_world.front_default;
