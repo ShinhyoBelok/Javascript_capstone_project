@@ -1,5 +1,6 @@
-import addeventComment from "../display-comment.js";
-import { getLikes, addeventLikes } from "./displaylikes.js";
+import addeventComment from '../display-comment.js';
+import { getLikes, addeventLikes } from './displaylikes.js';
+
 const pokemonContainer = document.querySelector('.pokemon-container');
 const showPokemon = (pokemonList) => {
   pokemonContainer.innerHTML = '';
