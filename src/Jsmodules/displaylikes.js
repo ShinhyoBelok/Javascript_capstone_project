@@ -1,7 +1,4 @@
 const likesAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/likes/';
-const createApp = () => {
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/', { method: 'POST' }).then(res => res.json()).then(data => console.log(data));
-}
 
 const getLikes = () => {
   fetch(likesAPI, {method: 'GET', })
@@ -15,17 +12,26 @@ const getLikes = () => {
     }
   })
 }
-getLikes();
 
-const postLikes = async (id) => {
-  await fetch(likesAPI, {
+const postLikes = (id) => {
+  fetch(likesAPI, {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({ item_id: id })
   })
+  const likeTextElement = document.querySelector(`#like${id}`);
+  const numLikes = parseInt(likeTextElement.innerHTML.substring(0, 1));
+  likeTextElement.innerHTML = `${numLikes + 1} Likes`;
 }
 
-const showLike = async (id) => {
-  await getLikes();
-  const like = document.querySelector(`.like${id}`);
+const addeventLikes = () => {
+  const likeIcon = document.querySelectorAll('.likeIcon');
+  likeIcon.forEach(like => {
+    like.addEventListener('click', (e) => {
+      const id = e.target.id;
+      postLikes(parseInt(id.substring(5)));
+    })
+  })
 }
+
+export { addeventLikes, getLikes };
