@@ -2,7 +2,6 @@
 import { showPopup, popup } from './popup-comment.js';
 
 /// / Comment button
-const commentButtons = document.querySelectorAll('.comments');
 const buttonPressed = (e) => {
   const sid = e.target.id.substring(4);
   // console.log(e.target.id, sid); // Get ID of Clicked Element
@@ -28,8 +27,11 @@ const buttonPressed = (e) => {
     });
 };
 
-commentButtons.forEach((button) => {
-  button.addEventListener('click', buttonPressed);
-});
+const addeventComment = () => {
+  const commentButtons = document.querySelectorAll('.comments');
+  commentButtons.forEach((button) => {
+    button.addEventListener('click', buttonPressed);
+  });
+};
 
-export default buttonPressed;
+export default addeventComment;

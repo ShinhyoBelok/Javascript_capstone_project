@@ -1,3 +1,4 @@
+import addeventComment from "../display-comment.js";
 const pokemonContainer = document.querySelector('.pokemon-container');
 const showPokemon = (pokemonList) => {
   pokemonContainer.innerHTML = '';
@@ -17,6 +18,7 @@ const showPokemon = (pokemonList) => {
     `;
     pokemonContainer.innerHTML += pokemonCardTemplate;
   }
+  addeventComment();
 };
 
 export default showPokemon;
