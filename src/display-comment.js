@@ -1,5 +1,5 @@
 // import { showPopup, getComments, addLike, popup, getCommentID } from './popup-comment.js';
-import { showPopup, popup} from './popup-comment.js';
+import { showPopup, popup } from './popup-comment.js';
 
 /// / Comment button
 const commentButtons = document.getElementsByClassName('comments');
