@@ -9,8 +9,8 @@ const showPokemon = (pokemonList) => {
         <div class="pokemonDetail dflex">
           <p class="name">${pokemonList[i].name}</p>
           <p class="likes dflex">
-            <img src="https://img.icons8.com/color/512/heart-pokemon.png" alt="heart">
-            <span>5 Likes</span> 
+            <img id="heart${pokemonList[i].id}" src="https://img.icons8.com/color/512/heart-pokemon.png" alt="heart">
+            <span class="likeText" id="like${pokemonList[i].id}">5 Likes</span> 
           </p>
         </div>
         <button class="comments" id="cBtn${pokemonList[i].id}" >Comments</button>
