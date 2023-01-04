@@ -3,7 +3,6 @@ import { showPopup, popup } from './popup-comment.js';
 
 /// / Comment button
 const commentButtons = document.querySelectorAll('.comments');
-console.log (commentButtons);
 const buttonPressed = (e) => {
   const sid = e.target.id.substring(4);
   // console.log(e.target.id, sid); // Get ID of Clicked Element
