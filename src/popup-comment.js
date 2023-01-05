@@ -139,10 +139,10 @@ export const getComments = async (itemId) => {
   }).catch((e) => e);
 };
 
-//  add new comment 
+//  add new comment
 
 export const addComment = async (itemId) => {
-  const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments`;
+  const commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments';
   const id = itemId;
   const name = document.getElementById('popupCommentInputName').value;
   const comment = document.getElementById('popupCommentInputComment').value;

@@ -1,5 +1,6 @@
-// import { showPopup, getComments, addLike, popup, getCommentID } from './popup-comment.js';
-import { showPopup, popup, getComments, getCommentID } from './popup-comment.js';
+import {
+  showPopup, popup, getComments, getCommentID,
+} from './popup-comment.js';
 
 /// / Comment button
 const buttonPressed = async (e) => {
