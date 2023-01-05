@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode=development",
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
