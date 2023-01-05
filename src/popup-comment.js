@@ -84,6 +84,35 @@ popupCommentList.id = 'popupCommentList';
 popupCommentList.classList = 'popup-comment-list';
 popupCommentRecord.appendChild(popupCommentList);
 
+// popup-new-comment
+const popupNewComment = document.createElement('div');
+popupNewComment.classList = 'popup-new-comment';
+engage.appendChild(popupNewComment);
+
+// popup-comment-input name
+const popupCommentInputName = document.createElement('input');
+popupCommentInputName.id = 'popupCommentInputName';
+popupCommentInputName.classList = 'popup-comment-input';
+popupCommentInputName.type = 'text';
+popupCommentInputName.placeholder = 'Your name...';
+popupNewComment.appendChild(popupCommentInputName);
+
+// popup-comment-input comment
+const popupCommentInputComment = document.createElement('textarea');
+popupCommentInputComment.id = 'popupCommentInputComment';
+popupCommentInputComment.classList = 'popup-comment-input popup-new-comment-text';
+popupCommentInputComment.cols = '15';
+popupCommentInputComment.rows = '4';
+popupCommentInputComment.placeholder = 'Your Comment...';
+popupNewComment.appendChild(popupCommentInputComment);
+
+// popup-comment-btn
+export const popupCommentBtn = document.createElement('a');
+popupCommentBtn.id = 'popupCommentBtn';
+popupCommentBtn.classList = 'popup-comment-btn';
+popupCommentBtn.innerHTML = 'Comment';
+popupNewComment.appendChild(popupCommentBtn);
+
 /// get comments
 export const getComments = async (itemId) => {
   // itemId = Number(itemId);
