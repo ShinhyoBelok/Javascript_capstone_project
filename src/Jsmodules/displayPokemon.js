@@ -1,5 +1,6 @@
 import addeventComment from './display-comment.js';
 import { getLikes, addeventLikes } from './displaylikes.js';
+import pokemonCounter from './homeCounter.js';
 
 const pokemonContainer = document.querySelector('.pokemon-container');
 const showPokemon = (pokemonList) => {
@@ -12,7 +13,7 @@ const showPokemon = (pokemonList) => {
           <p class="name">${pokemonList[i].name}</p>
           <p class="likes dflex">
             <img class="likeIcon" id="heart${pokemonList[i].id}" src="https://img.icons8.com/color/512/heart-pokemon.png" alt="heart">
-            <span class="likeText" id="like${pokemonList[i].id}">0 Likes</span> 
+            <span><span class="likeText" id="like${pokemonList[i].id}">0</span>&nbsp;Likes</span>
           </p>
         </div>
         <button class="comments" id="cBtn${pokemonList[i].id}" >Comments</button>
@@ -23,6 +24,7 @@ const showPokemon = (pokemonList) => {
   getLikes();
   addeventComment();
   addeventLikes();
+  pokemonCounter();
 };
 
 export default showPokemon;
