@@ -25,7 +25,7 @@ const postLikes = (id) => {
     body: JSON.stringify({ item_id: id }),
   });
   const likeTextElement = document.querySelector(`#like${id}`);
-  const numLikes = parseInt(likeTextElement.innerHTML);
+  const numLikes = parseInt(likeTextElement.innerHTML, 10);
   likeTextElement.innerHTML = numLikes + 1;
 };
 

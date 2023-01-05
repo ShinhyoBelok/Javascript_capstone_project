@@ -1,7 +1,7 @@
 /**
 * @jest-environment jsdom
 */
-import pokemonCounter from "../homeCounter.js";
+import pokemonCounter from '../homeCounter.js';
 
 const mockPokemonCardCreation = (numCard) => {
   document.body.innerHTML = `
@@ -30,32 +30,30 @@ const mockPokemonCardCreation = (numCard) => {
   }
 };
 
-
-
 describe('homePage-counter', () => {
   test('Correctly count the num of pokemon cards test1', () => {
     const num = 16;
-    mockPokemonCardCreation(num); 
-    let count = pokemonCounter();
+    mockPokemonCardCreation(num);
+    const count = pokemonCounter();
     expect(count).toBe(num);
   });
   test('Correctly count the num of pokemon cards test2', () => {
     const num = 24;
-    mockPokemonCardCreation(num); 
-    let count = pokemonCounter();
+    mockPokemonCardCreation(num);
+    const count = pokemonCounter();
     expect(count).toBe(num);
   });
   test('Correctly count the num of pokemon cards test3', () => {
     const num = 1;
-    mockPokemonCardCreation(num); 
-    let count = pokemonCounter();
+    mockPokemonCardCreation(num);
+    const count = pokemonCounter();
     expect(count).toBe(num);
   });
   test('Correctly display the num of cards in the DOM', () => {
     const num = 15;
-    mockPokemonCardCreation(num); 
-    let count = pokemonCounter();
-    const homeCounter =  document.querySelector('.home-counter');
+    mockPokemonCardCreation(num);
+    const count = pokemonCounter();
+    const homeCounter = document.querySelector('.home-counter');
     expect(homeCounter.innerHTML).toBe(`&nbsp;(${count})`);
   });
 });
