@@ -171,3 +171,9 @@ let commentID = 0;
 export function getCommentID(id) {
   commentID = id;
 }
+
+// -- comment button eventlistener
+popupCommentBtn.addEventListener('click', () => {
+  addComment(commentID);
+});
+//----------
