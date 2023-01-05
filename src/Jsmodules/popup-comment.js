@@ -1,5 +1,5 @@
 import './popup-comment.css';
-import pokemon3 from './img/pokemon3.png';
+import pokemon3 from '../img/pokemon3.png';
 //  popup
 export const popup = document.createElement('div');
 popup.id = 'popup';
