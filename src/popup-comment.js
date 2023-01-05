@@ -63,3 +63,53 @@ export function showPopup(name, image, info) {
 }
 
 // popup-comment-header
+const popupCommentHeader = document.createElement('h3');
+popupCommentHeader.classList = 'popup-comment-header';
+popupCommentHeader.innerHTML = 'Comments (4)'; /// /////// for test
+popupWindow.appendChild(popupCommentHeader);
+
+// popup-engage section
+const engage = document.createElement('div');
+engage.classList = 'd-grid-2col';
+popupWindow.appendChild(engage);
+
+// popup-comment-record
+const popupCommentRecord = document.createElement('div');
+popupCommentRecord.classList = 'popup-comment-record';
+engage.appendChild(popupCommentRecord);
+
+// popup-comment-list
+const popupCommentList = document.createElement('ul');
+popupCommentList.id = 'popupCommentList';
+popupCommentList.classList = 'popup-comment-list';
+popupCommentRecord.appendChild(popupCommentList);
+
+
+/// get comments
+export const getComments = async (itemId) => {
+  //itemId = Number(itemId);
+  const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments?item_id=${itemId}`;
+  //const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
+  //const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
+  await fetch(commentsAPI).then((response) => response.json()).then((json) => {
+    if (json.length === undefined) {
+      console.log("json.length undef", json.length )
+      popupCommentHeader.innerHTML = 'Comments (0)';
+      popupCommentList.innerHTML = '';
+    } else {
+      console.log("json.length ", json.length )
+      popupCommentHeader.innerHTML = `Comments (${json.length})`;
+      popupCommentList.innerHTML = '';
+      json.forEach((element) => {
+        const newComment = document.createElement('li');
+        newComment.classList = 'popup-comment-item';
+        newComment.innerHTML = ` 
+            <label class="popup-comment-author">${element.username}</label>
+            <p class="popup-comment-text">${element.comment}</p>
+            <p class="popup-comment-date">${element.creation_date}</p>`;  
+        popupCommentList.appendChild(newComment);
+      });
+    }
+  }).catch((e) => e);
+};
+
