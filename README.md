@@ -30,9 +30,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 To do taks <a name="about-project"></a>
+# 📖 Pokedex <a name="about-project"></a>
 
-**To do taks** is a website that allows you to create a list of task that you want to save online.
+**Pokedex** is a website that allows you see the information, like and comment your favorites pokemons.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -44,8 +44,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Add_and_romeve_books**
-- **Localstorage**
+- **Detail Pokemon information**
+- **Like Pokemons**
+- **Comment Pokemons**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -53,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[You can see our live demo](https://shinhyobelok.github.io/To-do-list/)
+[You can see our live demo](https://shinhyobelok.github.io/Javascript_capstone_project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,7 +77,7 @@ Clone this repository to your desired folder:
 
 - Choose a local directory.
 - Open a Git Terminal.
-- write: git clone https://github.com/ShinhyoBelok/To-do-list.git
+- write: git clone https://github.com/ShinhyoBelok/Javascript_capstone_project.git
 - Open the repository with VS Code.
 
 ### Usage
@@ -102,7 +103,7 @@ In order to modificate the project you have to install webpack and css loader:
 
 You can deploy this project using:
 
-[Deploy](https://shinhyobelok.github.io/To-do-list/)
+[Deploy](https://shinhyobelok.github.io/Javascript_capstone_project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,6 +117,12 @@ You can deploy this project using:
 - Twitter: [@Bell_iraki](https://twitter.com/Bell_iraki)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/shinhyo-belliard-okazaki-807a38249/)
 
+👤 **Ivan Martinez**
+
+- GitHub: [@ivanmvh](https://github.com/ivanmvh)
+- Twitter: [@imprivado](https://twitter.com/imprivado)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ivan-martinez-von-halle/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -123,7 +130,6 @@ You can deploy this project using:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Cool_animation**
-- [ ] **Change_color_theme**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,7 +139,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/M1rn4/Set-up-adn-mobile-first/issues).
+Feel free to check the [issues page](https://shinhyobelok.github.io/Javascript_capstone_project/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
