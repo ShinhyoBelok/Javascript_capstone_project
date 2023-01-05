@@ -1,5 +1,5 @@
 // import { showPopup, getComments, addLike, popup, getCommentID } from './popup-comment.js';
-import { showPopup, popup, getComments, getCommentID} from './popup-comment.js';
+import { showPopup, popup, getComments } from './popup-comment.js';
 
 /// / Comment button
 const buttonPressed = async (e) => {
@@ -12,7 +12,7 @@ const buttonPressed = async (e) => {
       const pokemon = json;
       const { name } = pokemon;
       // const image = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`;
-      //const image = pokemon.sprites.front_default;
+      // const image = pokemon.sprites.front_default;
       const image = pokemon.sprites.other.dream_world.front_default;
       // const image = pokemon.sprites.other.official-artwork.front_default;
       const info = `
@@ -22,7 +22,7 @@ const buttonPressed = async (e) => {
       <p class="popup-detail-item">Moves : ${pokemon.moves.length}</p> `;
       showPopup(name, image, info);
       getComments(sid);
-      //getCommentID(sid);
+      // getCommentID(sid);
       popup.classList.toggle('display');
     });
 };
