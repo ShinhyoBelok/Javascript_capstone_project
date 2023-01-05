@@ -1,6 +1,6 @@
 import showPokemon from './displayPokemon.js';
 
-const getAllPokemons = (num = 100) => {
+const getAllPokemons = (num = 21) => {
   const promises = [];
   for (let id = 1; id < num; id += 1) {
     const pokemonAPI = `https://pokeapi.co/api/v2/pokemon/${id}/`;
