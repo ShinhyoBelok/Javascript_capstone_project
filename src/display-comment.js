@@ -1,12 +1,13 @@
-// import { showPopup, getComments, addLike, popup, getCommentID } from './popup-comment.js';
-import { showPopup, popup } from './popup-comment.js';
+import {
+  showPopup, popup, getComments, getCommentID,
+} from './popup-comment.js';
 
 /// / Comment button
-const buttonPressed = (e) => {
+const buttonPressed = async (e) => {
   const sid = e.target.id.substring(4);
   // console.log(e.target.id, sid); // Get ID of Clicked Element
   const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${sid}`;
-  fetch(pokemonUrl)
+  await fetch(pokemonUrl)
     .then((response) => response.json())
     .then((json) => {
       const pokemon = json;
@@ -21,8 +22,8 @@ const buttonPressed = (e) => {
       <p class="popup-detail-item">Base Experience : ${pokemon.base_experience}</p>
       <p class="popup-detail-item">Moves : ${pokemon.moves.length}</p> `;
       showPopup(name, image, info);
-      // getComments(pokemon.id);
-      // getCommentID(pokemon.id);
+      getComments(sid);
+      getCommentID(sid);
       popup.classList.toggle('display');
     });
 };

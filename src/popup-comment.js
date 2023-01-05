@@ -63,3 +63,117 @@ export function showPopup(name, image, info) {
 }
 
 // popup-comment-header
+const popupCommentHeader = document.createElement('h3');
+popupCommentHeader.classList = 'popup-comment-header';
+popupCommentHeader.innerHTML = 'Comments (4)'; /// /////// for test
+popupWindow.appendChild(popupCommentHeader);
+
+// popup-engage section
+const engage = document.createElement('div');
+engage.classList = 'd-grid-2col';
+popupWindow.appendChild(engage);
+
+// popup-comment-record
+const popupCommentRecord = document.createElement('div');
+popupCommentRecord.classList = 'popup-comment-record';
+engage.appendChild(popupCommentRecord);
+
+// popup-comment-list
+const popupCommentList = document.createElement('ul');
+popupCommentList.id = 'popupCommentList';
+popupCommentList.classList = 'popup-comment-list';
+popupCommentRecord.appendChild(popupCommentList);
+
+// popup-new-comment
+const popupNewComment = document.createElement('div');
+popupNewComment.classList = 'popup-new-comment';
+engage.appendChild(popupNewComment);
+
+// popup-comment-input name
+const popupCommentInputName = document.createElement('input');
+popupCommentInputName.id = 'popupCommentInputName';
+popupCommentInputName.classList = 'popup-comment-input';
+popupCommentInputName.type = 'text';
+popupCommentInputName.placeholder = 'Your name...';
+popupNewComment.appendChild(popupCommentInputName);
+
+// popup-comment-input comment
+const popupCommentInputComment = document.createElement('textarea');
+popupCommentInputComment.id = 'popupCommentInputComment';
+popupCommentInputComment.classList = 'popup-comment-input popup-new-comment-text';
+popupCommentInputComment.cols = '15';
+popupCommentInputComment.rows = '4';
+popupCommentInputComment.placeholder = 'Your Comment...';
+popupNewComment.appendChild(popupCommentInputComment);
+
+// popup-comment-btn
+export const popupCommentBtn = document.createElement('a');
+popupCommentBtn.id = 'popupCommentBtn';
+popupCommentBtn.classList = 'popup-comment-btn';
+popupCommentBtn.innerHTML = 'Comment';
+popupNewComment.appendChild(popupCommentBtn);
+
+/// get comments
+export const getComments = async (itemId) => {
+  // itemId = Number(itemId);
+  const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments?item_id=${itemId}`;
+  // const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
+  // const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
+  await fetch(commentsAPI).then((response) => response.json()).then((json) => {
+    if (json.length === undefined) {
+      popupCommentHeader.innerHTML = 'Comments (0)';
+      popupCommentList.innerHTML = '';
+    } else {
+      popupCommentHeader.innerHTML = `Comments (${json.length})`;
+      popupCommentList.innerHTML = '';
+      json.forEach((element) => {
+        const newComment = document.createElement('li');
+        newComment.classList = 'popup-comment-item';
+        newComment.innerHTML = ` 
+            <label class="popup-comment-author">${element.username}</label>
+            <p class="popup-comment-text">${element.comment}</p>
+            <p class="popup-comment-date">${element.creation_date}</p>`;
+        popupCommentList.appendChild(newComment);
+      });
+    }
+  }).catch((e) => e);
+};
+
+//  add new comment
+
+export const addComment = async (itemId) => {
+  const commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments';
+  const id = itemId;
+  const name = document.getElementById('popupCommentInputName').value;
+  const comment = document.getElementById('popupCommentInputComment').value;
+  if (name === '' || comment === '') return;
+
+  await fetch(commentsAPI, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+      username: name,
+      comment,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then((response) => {
+    getComments(itemId);
+    document.getElementById('popupCommentInputName').value = '';
+    document.getElementById('popupCommentInputComment').value = '';
+    return response.json();
+  }).catch((e) => e);
+};
+
+// ----------
+let commentID = 0;
+export function getCommentID(id) {
+  commentID = id;
+}
+
+// -- comment button eventlistener
+popupCommentBtn.addEventListener('click', () => {
+  addComment(commentID);
+});
+//----------
