@@ -138,3 +138,36 @@ export const getComments = async (itemId) => {
     }
   }).catch((e) => e);
 };
+
+//  add new comment 
+
+export const addComment = async (itemId) => {
+  const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments`;
+  const id = itemId;
+  const name = document.getElementById('popupCommentInputName').value;
+  const comment = document.getElementById('popupCommentInputComment').value;
+  if (name === '' || comment === '') return;
+
+  await fetch(commentsAPI, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+      username: name,
+      comment,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then((response) => {
+    getComments(itemId);
+    document.getElementById('popupCommentInputName').value = '';
+    document.getElementById('popupCommentInputComment').value = '';
+    return response.json();
+  }).catch((e) => e);
+};
+
+// ----------
+let commentID = 0;
+export function getCommentID(id) {
+  commentID = id;
+}

@@ -156,42 +156,6 @@
 
 /* New comment */
 
-.popup-new-comment {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.popup-comment-input {
-  padding: 10px;
-  font-size: medium;
-  border: 0;
-  outline: 0;
-  border-bottom: 1px solid gainsboro;
-}
-
-.popup-comment-input::placeholder {
-  color: rgb(170, 170, 170);
-}
-
-.popup-comment-input:focus {
-  border-bottom: 1px solid rgb(141, 63, 231);
-}
-
-.popup-new-comment-text {
-  resize: none;
-}
-
-.popup-comment-btn {
-  padding: 10px 15px;
-  background-color: rgb(141, 63, 231);
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  width: fit-content;
-  align-self: flex-end;
-}
-
 @media screen and (min-width: 400px) {
   .d-grid-2col {
     grid-template-columns: 1fr 1fr;
