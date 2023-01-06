@@ -1,0 +1,4 @@
+docs
+coverage
+dist
+webpack.config.js

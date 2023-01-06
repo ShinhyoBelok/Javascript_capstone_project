@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1673012916277" clover="3.2.0">
+  <project timestamp="1673012916277" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="2" classes="2"/>
+    <file name="homeCounter.js" path="G:\Program files code\Microverse\Module 2\Javascript_capstone_project\src\Jsmodules\homeCounter.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+    </file>
+    <file name="ut-counter-and-check.js" path="G:\Program files code\Microverse\Module 2\Javascript_capstone_project\src\Jsmodules\ut-counter-and-check.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+    </file>
+  </project>
+</coverage>
