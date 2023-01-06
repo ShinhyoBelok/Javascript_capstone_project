@@ -6,15 +6,7 @@ const utCounterCheck = (pClassName) => {
   let conta = 0;
   let contaExist = document.getElementsByClassName(`${pClassName}`);
   
-  return contaExist.length
-  
-  if (contaExist.length == 0) {
-    return -1
-  }
-  
-  const countClassName = document.querySelectorAll(`.${pClassName}`);
-  conta = countClassName.length;
-  return conta;
+  return contaExist.length;
 };
 
 export default utCounterCheck;
