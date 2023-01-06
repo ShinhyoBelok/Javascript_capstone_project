@@ -1,5 +1,7 @@
 import './popup-comment.css';
 import pokemon3 from '../img/pokemon3.png';
+import utCounterCheck from './ut-counter-and-check';
+
 //  popup
 export const popup = document.createElement('div');
 popup.id = 'popup';
@@ -124,7 +126,7 @@ export const getComments = async (itemId) => {
       popupCommentHeader.innerHTML = 'Comments (0)';
       popupCommentList.innerHTML = '';
     } else {
-      popupCommentHeader.innerHTML = `Comments (${json.length})`;
+      // popupCommentHeader.innerHTML = `Comments (${json.length})`;
       popupCommentList.innerHTML = '';
       json.forEach((element) => {
         const newComment = document.createElement('li');
@@ -134,9 +136,11 @@ export const getComments = async (itemId) => {
             <p class="popup-comment-text">${element.comment}</p>
             <p class="popup-comment-date">${element.creation_date}</p>`;
         popupCommentList.appendChild(newComment);
-      });
+      })
     }
   }).catch((e) => e);
+  let qtyComments = utCounterCheck('popup-comment-item');
+  popupCommentHeader.innerHTML = `Comments (${qtyComments})`;
 };
 
 //  add new comment
