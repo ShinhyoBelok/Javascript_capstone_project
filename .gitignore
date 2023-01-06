@@ -3,3 +3,4 @@ linters.bat
 linters.sh
 .vscode
 _temp
+coverage

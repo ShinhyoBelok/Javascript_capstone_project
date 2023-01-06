@@ -39,6 +39,7 @@
 - HTML and JavaScript
 - Git, Github and Visual Studio Code
 - Webpack
+- Jest
 
 <!-- Features -->
 
@@ -46,7 +47,7 @@
 
 - **Detail Pokemon information**
 - **Like Pokemons**
-- **Comment Pokemons**
+- **Comments Pokemons**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -54,8 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[You can see our live demo](https://shinhyobelok.github.io/Javascript_capstone_project/)
-[Loom Demo](https://shinhyobelok.github.io/Javascript_capstone_project/)
+You can see our [live demo](https://shinhyobelok.github.io/Javascript_capstone_project/) and video [Demo](https://drive.google.com/file/d/19aKxSuMSVHMheLHx9Aw5LdV8HMfyTDow/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
