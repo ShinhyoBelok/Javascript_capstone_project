@@ -1,6 +1,7 @@
 import './popup-comment.css';
 import pokemon3 from '../img/pokemon3.png';
 import utCounterCheck from './ut-counter-and-check.js';
+import involvementApi from './baseApis.js';
 
 //  popup
 export const popup = document.createElement('div');
@@ -55,14 +56,13 @@ popupWindow.appendChild(popupDetail);
 
 xBtn.addEventListener('click', () => {
   popup.classList.remove('display');
-  // popupCommentList.innerHTML = '';
 });
 
-export function showPopup(name, image, info) {
+export const showPopup = (name, image, info) => {
   popupHeaderText.innerHTML = name;
   popupImage.src = image;
   popupDetail.innerHTML = info;
-}
+};
 
 // popup-comment-header
 const popupCommentHeader = document.createElement('h3');
@@ -117,16 +117,12 @@ popupNewComment.appendChild(popupCommentBtn);
 
 /// get comments
 export const getComments = async (itemId) => {
-  // itemId = Number(itemId);
-  const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments?item_id=${itemId}`;
-  // const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
-  // const commentsAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/v1QM9q7o5iYcOME1s2k2/comments?item_id=${itemId}`;
+  const commentsAPI = `${involvementApi}/comments?item_id=${itemId}`;
   await fetch(commentsAPI).then((response) => response.json()).then((json) => {
     if (json.length === undefined) {
       popupCommentHeader.innerHTML = 'Comments (0)';
       popupCommentList.innerHTML = '';
     } else {
-      // popupCommentHeader.innerHTML = `Comments (${json.length})`;
       popupCommentList.innerHTML = '';
       json.forEach((element) => {
         const newComment = document.createElement('li');
@@ -146,7 +142,7 @@ export const getComments = async (itemId) => {
 //  add new comment
 
 export const addComment = async (itemId) => {
-  const commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/lfiNWiSutZHfoDfs9JiB/comments';
+  const commentsAPI = `${involvementApi}/comments`;
   const id = itemId;
   const name = document.getElementById('popupCommentInputName').value;
   const comment = document.getElementById('popupCommentInputComment').value;
@@ -170,7 +166,6 @@ export const addComment = async (itemId) => {
   }).catch((e) => e);
 };
 
-// ----------
 let commentID = 0;
 export function getCommentID(id) {
   commentID = id;
@@ -180,4 +175,3 @@ export function getCommentID(id) {
 popupCommentBtn.addEventListener('click', () => {
   addComment(commentID);
 });
-//----------

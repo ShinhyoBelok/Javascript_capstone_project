@@ -2,20 +2,16 @@ import {
   showPopup, popup, getComments, getCommentID,
 } from './popup-comment.js';
 
-/// / Comment button
+// Comment button
 const buttonPressed = async (e) => {
   const sid = e.target.id.substring(4);
-  // console.log(e.target.id, sid); // Get ID of Clicked Element
   const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${sid}`;
   await fetch(pokemonUrl)
     .then((response) => response.json())
     .then((json) => {
       const pokemon = json;
       const { name } = pokemon;
-      // const image = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`;
-      // const image = pokemon.sprites.front_default;
       const image = pokemon.sprites.other.dream_world.front_default;
-      // const image = pokemon.sprites.other.official-artwork.front_default;
       const info = `
       <p class="popup-detail-item">Height : ${pokemon.height}</p>
       <p class="popup-detail-item">Weight : ${pokemon.weight}</p>
