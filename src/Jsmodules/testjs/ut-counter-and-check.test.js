@@ -2,21 +2,20 @@
 * @jest-environment jsdom
 */
 
-import utCounterCheck from "../ut-counter-and-check";
+import utCounterCheck from '../ut-counter-and-check.js';
 
 const mockCommentsList = (numComments) => {
-  document.body.innerHTML = ``;
+  document.body.innerHTML = '';
   for (let i = 0; i < numComments; i += 1) {
-      const newComment = document.createElement('li');
-      newComment.innerHTML = ` 
+    const newComment = document.createElement('li');
+    newComment.innerHTML = ` 
       <p class="popup-comment-date">hola</p>`;
-      newComment.classList = 'popup-comment-item';
-      document.body.appendChild(newComment);
+    newComment.classList = 'popup-comment-item';
+    document.body.appendChild(newComment);
   }
-}
+};
 
 describe('comments-counter', () => {
-  
   test('Correctly count the num of comments test1', () => {
     const num = 0;
     mockCommentsList(num);
@@ -37,7 +36,7 @@ describe('comments-counter', () => {
     const count = utCounterCheck('popup-comment-item');
     expect(count).toBe(num);
   });
- 
+
   test('If class parameters is no given', () => {
     const num = 2;
     mockCommentsList(num);

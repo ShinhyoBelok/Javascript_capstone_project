@@ -1,6 +1,6 @@
 import './popup-comment.css';
 import pokemon3 from '../img/pokemon3.png';
-import utCounterCheck from './ut-counter-and-check';
+import utCounterCheck from './ut-counter-and-check.js';
 
 //  popup
 export const popup = document.createElement('div');
@@ -136,10 +136,10 @@ export const getComments = async (itemId) => {
             <p class="popup-comment-text">${element.comment}</p>
             <p class="popup-comment-date">${element.creation_date}</p>`;
         popupCommentList.appendChild(newComment);
-      })
+      });
     }
   }).catch((e) => e);
-  let qtyComments = utCounterCheck('popup-comment-item');
+  const qtyComments = utCounterCheck('popup-comment-item');
   popupCommentHeader.innerHTML = `Comments (${qtyComments})`;
 };
 
