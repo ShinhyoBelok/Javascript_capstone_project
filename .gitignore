@@ -2,3 +2,4 @@ node_modules
 linters.bat
 linters.sh
 .vscode
+_temp
